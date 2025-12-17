@@ -37,31 +37,6 @@ plt.xlabel(f'{x_col} values')
 plt.ylabel(f'{y_col} values')
 plt.show()
 
-# --- Define dependent and independent variables ---
-# dependent = 'IMDB_Rating'
-# independents = ['Released_Year', 'Runtime', 'Meta_score', 'No_of_Votes', 'Gross']
-
-# # --- Create subplots ---
-# sns.set_theme(style='whitegrid')
-# fig, axes = plt.subplots(2, 3, figsize=(15, 8))  # 2 rows × 3 columns
-# axes = axes.flatten()
-
-# # --- Plot each independent vs dependent ---
-# for i, col in enumerate(independents):
-#     sns.scatterplot(data=df, x=col, y=dependent, ax=axes[i], color='blue', s=40, alpha=0.7)
-#     axes[i].set_title(f'{col} vs {dependent}')
-#     axes[i].set_xlabel(col)
-#     axes[i].set_ylabel(dependent)
-
-# # --- Hide any unused subplot (if number of plots < grid cells) ---
-# for j in range(len(independents), len(axes)):
-#     fig.delaxes(axes[j])
-
-# plt.suptitle("Scatter Plots of Independent Variables vs IMDB_Rating", fontsize=14, y=1.02)
-# plt.tight_layout()
-# plt.show()
-
-
 # --- Handle missing or non-numeric data ---
 # Drop rows with missing dependent variable or predictors
 df = df.dropna(subset=['IMDB_Rating', 'Released_Year', 'Runtime', 'Genre', 
@@ -144,3 +119,4 @@ for ax, (name, model) in zip(axes, models.items()):
 
 plt.tight_layout()
 plt.show()
+
